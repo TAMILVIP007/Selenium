@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 
 from driver import setup_browser
 from img import gen_captcha
+from config import vars
 
 filterwarnings("ignore")
 

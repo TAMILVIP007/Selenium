@@ -3,7 +3,7 @@ from random import randint
 
 from PIL import Image, ImageEnhance
 from requests import post
-
+from config import vars
 
 async def crop_image(browser):
     browser.save_screenshot("screenshot.png")
