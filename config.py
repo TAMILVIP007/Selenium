@@ -18,4 +18,4 @@ class vars:
     api = getenv("API")
 
     # chrome binary
-    bin = "/app/.apt/usr/bin/google-chrome"
+    chrome_bin = "/app/.apt/usr/bin/google-chrome"

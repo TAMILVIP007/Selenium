@@ -10,7 +10,7 @@ def setup_browser():
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument("--disable-dev-shm-usage")
-    chrome_options.binary_location = vars.bin
+    chrome_options.binary_location = vars.chrome_bin
     driver = webdriver.Chrome(chrome_options=chrome_options)
     driver.delete_all_cookies()
     return driver
