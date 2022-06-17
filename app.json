@@ -1,0 +1,41 @@
+{
+    "name": "Selenium",
+    "logo": "https://telegra.ph//file/02872dbcaa03d72eb4041.jpg",
+    "description": "My First Selenium Project",
+    "keywords": [
+        "Selenium"
+    ],
+    "repository": "https://github.com/TAMILVIP007/Selenium",
+    "env": {
+        "MAIL": {
+            "description": "ur acc mail id",
+            "required": "True",
+            "value": ""
+        },
+        "PASSWORD": {
+            "description": "ur acc password",
+            "required": "True",
+            "value": ""
+        },
+        "API": {
+            "description": "get api key from here https://api-ninjas.com/api",
+            "required": "True",
+            "value": ""
+        }
+    },
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        },{
+            "url":"https://github.com/heroku/heroku-buildpack-google-chrome"
+          },{
+            "url":"https://github.com/heroku/heroku-buildpack-chromedriver"
+          },
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}

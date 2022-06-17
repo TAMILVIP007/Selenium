@@ -1,0 +1,4 @@
+selenium
+pillow
+requests
+python-dotenv
