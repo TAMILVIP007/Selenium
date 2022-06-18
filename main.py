@@ -2,7 +2,8 @@ import asyncio
 from warnings import filterwarnings
 
 from selenium.webdriver.common.by import By
-
+from apscheduler.schedulers.asyncio import AsyncIOScheduler
+from pytz import utc
 from driver import setup_browser
 from img import gen_captcha
 from config import vars
@@ -28,11 +29,14 @@ async def main():
             button.send_keys(text)
             browser.find_element(By.XPATH, "//button[@ng-if='countDown<=0']").click()
             print("Captcha: " + text + " sent")
-            await asyncio.sleep(300)
+            await asyncio.sleep(30)
         except BaseException:
             pass
 
 
 print("Starting...")
 loop = asyncio.get_event_loop()
+scheduler = AsyncIOScheduler()
+scheduler.add_job(main(), 'interval', seconds=900)
+scheduler.start()
 loop.run_until_complete(main())

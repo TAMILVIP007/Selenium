@@ -29,8 +29,7 @@ async def crop_image(browser):
 async def gen_captcha(browser):
     img = await crop_image(browser)
     try:
-        with open(img, "rb") as f:
-            f.read()
+
             headers = {"X-Api-Key": vars.api}
             api_url = "https://api.api-ninjas.com/v1/imagetotext"
             files = {"image": open(img, "rb")}
