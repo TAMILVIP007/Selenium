@@ -14,8 +14,5 @@ class vars:
     mail = getenv("MAIL")
     password = getenv("PASSWORD")
 
-    # screen shot api
-    api = getenv("API")
-
     # chrome binary
     chrome_bin = "/app/.apt/usr/bin/google-chrome"
