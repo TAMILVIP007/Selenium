@@ -2,4 +2,4 @@ selenium
 pillow
 requests
 python-dotenv
-apscheduler
+easyocr
