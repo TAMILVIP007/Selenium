@@ -29,16 +29,14 @@ async def crop_image(browser):
 async def gen_captcha(browser):
     img = await crop_image(browser)
     try:
-
-            headers = {"X-Api-Key": vars.api}
-            api_url = "https://api.api-ninjas.com/v1/imagetotext"
-            files = {"image": open(img, "rb")}
-            r = post(api_url, files=files, headers=headers)
-            if not r.json()[0]["text"]:
-                os.remove(img)
-                return await rand()
-            os.remove(img)
-            return r.json()[0]["text"]
+        img = await crop_image(browser)
+        reader = easyocr.Reader(['en'])
+        result=reader.readtext(img)
+        print(result)
+        text=''
+        for results in result:
+            text+=results[1]+ ' '
+        return text.split(" ")[0]
     except Exception:
         return rand()
 
