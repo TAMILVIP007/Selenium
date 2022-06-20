@@ -2,8 +2,6 @@ import asyncio
 from warnings import filterwarnings
 
 from selenium.webdriver.common.by import By
-from apscheduler.schedulers.asyncio import AsyncIOScheduler
-from pytz import utc
 from driver import setup_browser
 from img import gen_captcha
 from config import vars
@@ -36,7 +34,4 @@ async def main():
 
 print("Starting...")
 loop = asyncio.get_event_loop()
-scheduler = AsyncIOScheduler()
-scheduler.add_job(main(), 'interval', seconds=900)
-scheduler.start()
 loop.run_until_complete(main())
