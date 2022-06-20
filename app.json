@@ -16,11 +16,6 @@
             "description": "ur acc password",
             "required": "True",
             "value": ""
-        },
-        "API": {
-            "description": "get api key from here https://api-ninjas.com/api",
-            "required": "True",
-            "value": ""
         }
     },
     "buildpacks": [
